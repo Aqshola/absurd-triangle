@@ -35,6 +35,8 @@ function init() {
         alert("Failet render fragment shader")
     }
 
+
+    //create gl program
     const glProgram = gl.createProgram()
     gl.attachShader(glProgram, vertexShader)
     gl.attachShader(glProgram, fragmentShader)
@@ -55,6 +57,7 @@ function init() {
     }
 
 
+    //initiate drawing
     const triangleVertices = [
         //X  Y              
         0, 1.0,
@@ -101,7 +104,7 @@ function init() {
     gl.enableVertexAttribArray(positionAttribLocation)
     gl.enableVertexAttribArray(colorAttribLocation)
 
-    //render loop
+    //render
     gl.useProgram(glProgram)
     gl.drawArrays(gl.TRIANGLES, 0, 3)
 
